@@ -1,6 +1,6 @@
 {
   "name": "萬用換算器",
-  "short_name": "換算器",
+  "short_name": "萬用換算器",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -14,3 +14,4 @@
     }
   ]
 }
+
