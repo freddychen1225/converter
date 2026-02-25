@@ -1,12 +1,12 @@
-// 更新版本號為 v2 以強制手機刷新快取
-const CACHE_NAME = 'converter-v2'; 
+// 更新版本號為 v3 以強制手機刷新快取
+const CACHE_NAME = 'converter-v3'; 
 const urlsToCache = [
   './',
   './index.html',
   './style.css',
   './app.js',
   './manifest.json',
-  './icon.png'  // 已將本地圖示加入離線快取清單
+  './icon.png'
 ];
 
 self.addEventListener('install', event => {
@@ -17,7 +17,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// 新增：啟動新的 Service Worker 時，自動清除 v1 舊版本的快取
+// 啟動新的 Service Worker 時，自動清除舊版本的快取
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
