@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>萬用換算器 PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <!-- 已將此處更新為您的本地端圖示檔案 -->
+  <link rel="apple-touch-icon" href="./icon.png">
+</head>
+<body>
+  <div class="converter-box">
+    <h2>萬用換算器</h2>
+    <select id="category">
+      <option value="length">長度 (公/英制)</option>
+      <option value="weight">重量 (公/英/台制)</option>
+      <option value="volume">體積 (公/英制)</option>
+      <option value="area">面積 (公/英/台制)</option>
+      <option value="speed">速度 (公/英制)</option>
+      <option value="currency">常用貨幣匯率 (每日更新)</option>
+    </select>
+
+    <div class="row">
+      <input type="number" id="input1" placeholder="輸入數值" value="1">
+      <select id="unit1"></select>
+    </div>
+    <div class="equal-sign">=</div>
+    <div class="row">
+      <input type="number" id="input2" placeholder="轉換結果">
+      <select id="unit2"></select>
+    </div>
+    <p id="update-status" style="font-size:12px; color:#888; text-align:center; margin-top:15px;"></p>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // 註冊 Service Worker 讓網頁具備 PWA 離線功能
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
